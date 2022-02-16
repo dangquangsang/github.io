@@ -1,0 +1,125 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Quantri_web.master.cs" Inherits="TruongDhv.Admin.Quantri_web" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div style="text-align:center; font-family:sans-serif">
+            <table style="width: 100%" border="1">
+                <tr>
+                    <td colspan="3" style="background-image: url(../App_Themes/Banner.jpg); height: 120px;"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" style="text-align:center; height: 40px; background:#3399cc">
+                        <table style="width:100%; height: 40px">
+                            <tr>
+                                <td style="width:70%; color:white; font-weight:bold; font-size:25px">
+                                    <marquee>
+                                        Nhóm 9: Trần Nam Sang - Đặng Quang Sang - Bùi Hồng Sang - Nguyễn Thái Nhân
+                                    </marquee>
+                                </td>
+                                <td align="left" width="25%" style="text-align: left">
+                                    <asp:Label ID="LblAdmin" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#000033"></asp:Label>
+                                </td>
+                                <td align="center" width="10%">
+                                    <asp:HyperLink ID="HyperLink6" runat="server" Font-Bold="True" Font-Size="13pt" ForeColor="#FF0000" NavigateUrl="~/Trangchu.aspx">Thoát</asp:HyperLink>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td width="20%" align="left" valign="top">
+                        <div style="text-align: center">
+                            <div style="text-align: center"></div>
+                            <table style="width: 100%">
+                                <tr>
+                                    <td style="width: 100px; height: 21px; background-color: #006699; text-align: left;">
+                                        &nbsp;<asp:Image ID="Image2" runat="server" ImageUrl="~/App_Themes/here.gif" />&nbsp;
+                                        <asp:HyperLink ID="HyperLink2" runat="server" Font-Bold="True" Font-Underline="True" ForeColor="White" NavigateUrl="~/Admin/Trangchu.aspx">Home</asp:HyperLink>
+                                        <br />
+                                        <asp:DataList ID="DataList1" runat="server" DataKeyField="Group_ID" DataSourceID="SqlDataSource1">
+                                            <ItemTemplate>
+                                                <div style="text-align: left">
+                                                    <table style="width: 100%">
+                                                        <tr>
+                                                            <td style="text-align: left" width="100%">
+                                                                <asp:Image ID="Image1" runat="server" ImageUrl="~/App_Themes/here.gif" />&nbsp;
+                                                                <asp:HyperLink ID="HyperLink1" runat="server" Font-Bold="True" ForeColor="White" NavigateUrl='<%# "Nhomtin.aspx?Group_ID="+Eval("Group_ID") %>' Text='<%# Eval("Title") %>' Width="144px"></asp:HyperLink>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </ItemTemplate>
+                                        </asp:DataList>
+                                        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT * FROM [Tb_GroupNews]"></asp:SqlDataSource>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div style="text-align: center">
+                            <hr />
+                            <table style="width: 100%">
+                                <tr>
+                                    <td align="left" style="background-color: #006699; height: 21px;" width="100%">
+                                         &nbsp;<asp:Image ID="Image7" runat="server" ImageUrl="~/App_Themes/here.gif" />
+                                        <asp:HyperLink ID="HyperLink3" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#FFFFFF" NavigateUrl="~/Admin/Xembaiviet.aspx">Xem bài viết</asp:HyperLink>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" style="background-color: #006699" width="100%">
+                                        &nbsp;<asp:Image ID="Image8" runat="server" ImageUrl="~/App_Themes/here.gif" />
+                                        <asp:HyperLink ID="HyperLink4" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#FFFFFF"
+                                            NavigateUrl="~/Admin/QuanlyUser.aspx">Quản lý User</asp:HyperLink>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" style="height: 22px; background-color: #006699" width="100%">
+                                        &nbsp;<asp:Image ID="Image9" runat="server" ImageUrl="~/App_Themes/here.gif" />
+                                        <asp:HyperLink ID="HyperLink5" runat="server" Font-Bold="True" Font-Size="12pt" ForeColor="#FFFFFF"
+                                            NavigateUrl="~/Admin/Timkiem.aspx">Tìm kiếm</asp:HyperLink>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br />
+                        <hr />
+                        <asp:Image ID="Image5" runat="server" ImageUrl="~/App_Themes/vision.gif" /><br />
+                        <asp:Image ID="Image6" runat="server" ImageUrl="~/App_Themes/honda.gif" /><br />
+                        <asp:Image ID="Image10" runat="server" ImageUrl="~/App_Themes/sale.gif" /><br />
+                        <asp:Image ID="Image11" runat="server" ImageUrl="~/App_Themes/budweiser.gif" />
+                    </td>
+                    <td width="60%" valign="top">
+                        <asp:contentplaceholder id="ContentPlaceHolder1" runat="server">
+                            <strong><span style="color: #0000ff"></span></strong>
+                        </asp:contentplaceholder>
+                    </td>
+                    <td style="width: 100px; text-align: center;" valign="top">
+                        <asp:Image ID="Image3" runat="server" ImageUrl="~/App_Themes/saleup.gif" />
+                        <asp:Image ID="Image4" runat="server" ImageUrl="~/App_Themes/book.gif" />
+                        <asp:Image ID="Image12" runat="server" ImageUrl="~/App_Themes/xedien.gif" />
+                        <asp:Image ID="Image13" runat="server" ImageUrl="~/App_Themes/coccoc.gif" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" height="150px" style="background-color: #ccffff; line-height:1.5">
+                        <span style="font-size: 14pt; color: #0033ff">
+                            © 2015 Bản quyền của Trường Đại học Vinh<br />
+                                Địa chỉ: 182 Lê Duẩn - Thành Phố Vinh - tỉnh Nghệ An<br />
+                                Điện thoại: (0238)3855.452 - Fax: (0238)3855.269 - Email: vinhuni@vinhuni.edu.vn<br />
+                                Chịu trách nhiệm nội dung: GS.TS. Nguyễn Huy Bằng - Hiệu trưởng<br />
+                                Ghi rõ nguồn "Cổng TT Đại học Vinh" khi sử dụng lại nội dung trên cổng thông tin.
+                        </span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
